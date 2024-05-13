@@ -45,3 +45,6 @@
 
 Анализ конкурентов:
   Конкуренты в юольшинстве своих случаев используют регистрацию, в отличии от MoneyTracker который использует куки файлы для запоминания без БД.
+  
+Диаграммы вариантов использования + Диаграммы классов + Диаграммы компонентов + sequence diagram https://miro.com/app/board/uXjVNv-_0Mw=/
+Прототип пользовательских интерфесов: https://www.figma.com/file/CD4Ytt79f0D88v7DpDKU08/Untitled?type=design&node-id=0-1&mode=design&t=xTWYt6b5cMf3M0Qb-0
