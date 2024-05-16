@@ -12,6 +12,7 @@ header{
     background-color: #313131;
     color: white;
     border-radius: 5px;
+    font-size: 20px;
     font-family: "Montserrat", sans-serif;
 }
 #balanceForm{
@@ -23,14 +24,16 @@ header{
 #balance{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
+    font-size: 2vw;
     color: white;
+    padding: 1vw;
 }
 #sendingLine{
-    width: 250px;
-    height: 15px;
+    width: 380px;
+    height: 25px;
     display: flex;
     flex-direction: row;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     flex-wrap: nowrap;
     background-color: rgb(75, 75, 75);
@@ -180,7 +183,7 @@ header{
 #biggestExpenses>p{
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
-    font-size: 1.3vw;
+    font-size: 1vw;
     color: white;
 }
 #biggestExpensesClass{
@@ -242,7 +245,7 @@ header{
     justify-content: space-between;
     padding: 5px;
     gap: 10px;
-    height: 25px;
+    height:auto;
     border-radius: 10px;
 }
 #sendText{
@@ -275,6 +278,7 @@ header{
     background-color: #252525;
     border-radius: 5px;
     border: none;
+    padding: 2px;
     outline: 0;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
@@ -292,7 +296,7 @@ header{
     background-color: #313131;
     border-radius: 10px;
     flex-direction: column;
-    min-height: 150px;
+    min-height: 50px;
     /* font-family: "Montserrat", sans-serif;
     font-weight: 500;
     color: #717171; */
@@ -301,7 +305,7 @@ header{
     display: flex;
     padding: 5px;
     gap: 10px;
-    height: 25px;
+    height: 40px;
     border-radius: 10px;
     width: 99%;
 }
@@ -358,6 +362,7 @@ header{
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     color: #575757;
+    font-size: 0.5vw;
 }
 #stylesForNothingBiggestExpenses{
     font-family: "Montserrat", sans-serif;

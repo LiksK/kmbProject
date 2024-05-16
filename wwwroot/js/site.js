@@ -87,6 +87,7 @@ let rendeerSendElement = (text, price, clas, type) => {
     <div id="readySendPrice">${price}</div>
     <div id="readySendClass">${clas}</div>
     <div id="readyTypeOfOperation">${type}</div>
+    <button id="delButton">Del</button>
 </div>`
 }
 let renderBiggestExpenses = (iconEmoji, nameClass, minusNumber) => {
@@ -163,6 +164,12 @@ sendAddBtnAdd.onclick = function(){
         console.log(sendArrayOfObject)
         if (positionOfTypeButton == 0) {
             balanceNum -= parseInt(sendPriceAdd.value)
+            if (balanceNum<0){
+                balance.style.color = "red"
+            }
+            else{
+                balance.style.color = "white"
+            }
             balance.innerHTML = `${balanceNum} rub`
             
             switch (sendClassAdd.value) {
@@ -212,6 +219,7 @@ sendAddBtnAdd.onclick = function(){
             ArraySendDay = [minusCafe , minusEducation , minusFastfood , minusHealth , minusHouse , minusLeisur , minusOther , minusProducts , minusTaxi]
             switch (new Date().getDay()){
                 case 0:
+                    loadWeeklyExpenses();
                     sundaySpent = sundaySpent + minusCafe + minusEducation + minusFastfood + minusHealth + minusHouse + minusLeisur + minusOther + minusProducts + minusTaxi
                     console.log("Sunday spent:", sundaySpent);
                     var maxValue = Math.max(mondaySpent + tuesdaySpent+wednesdaySpent+thursdaySpent+fridaySpent+saturdaySpent+sundaySpent);
@@ -219,9 +227,11 @@ sendAddBtnAdd.onclick = function(){
                     var absoluteMaxValue = maxValue  /  100;
                     console.log(maxValue)
                     document.getElementById("statisticColumnSu").style.height = `${sundaySpent / absoluteMaxValue}%`;
+                    saveWeeklyExpenses(); 
 
                     break;
                 case 1:
+                    loadWeeklyExpenses();
                     mondaySpent = mondaySpent + minusCafe + minusEducation + minusFastfood + minusHealth + minusHouse + minusLeisur + minusOther + minusProducts + minusTaxi
                     console.log("Monday spent:", mondaySpent);
                     var maxValue = Math.max(mondaySpent + tuesdaySpent+wednesdaySpent+thursdaySpent+fridaySpent+saturdaySpent+sundaySpent);
@@ -229,8 +239,10 @@ sendAddBtnAdd.onclick = function(){
                     var absoluteMaxValue = maxValue  /  100;
                     console.log(maxValue)
                     document.getElementById("statisticColumnMo").style.height = `${mondaySpent / absoluteMaxValue}%`;
+                    saveWeeklyExpenses(); 
                     break;
                 case 2:
+                    loadWeeklyExpenses();
                     tuesdaySpent = tuesdaySpent + minusCafe + minusEducation + minusFastfood + minusHealth + minusHouse + minusLeisur + minusOther + minusProducts + minusTaxi
                     console.log("Tuesday spent:", tuesdaySpent);
                     var maxValue = Math.max(mondaySpent + tuesdaySpent+wednesdaySpent+thursdaySpent+fridaySpent+saturdaySpent+sundaySpent);
@@ -238,8 +250,10 @@ sendAddBtnAdd.onclick = function(){
                     var absoluteMaxValue = maxValue  /  100;
                     console.log(maxValue)
                     document.getElementById("statisticColumnTu").style.height = `${tuesdaySpent / absoluteMaxValue}%`;
+                    saveWeeklyExpenses(); 
                     break;
                 case 3:
+                    loadWeeklyExpenses();
                     wednesdaySpent = wednesdaySpent + minusCafe + minusEducation + minusFastfood + minusHealth + minusHouse + minusLeisur + minusOther + minusProducts + minusTaxi
                     console.log("Wednesday spent:", wednesdaySpent);
                     var maxValue = Math.max(mondaySpent + tuesdaySpent+wednesdaySpent+thursdaySpent+fridaySpent+saturdaySpent+sundaySpent);
@@ -247,8 +261,10 @@ sendAddBtnAdd.onclick = function(){
                     var absoluteMaxValue = maxValue  /  100;
                     console.log(maxValue)
                     document.getElementById("statisticColumnWe").style.height = `${wednesdaySpent / absoluteMaxValue}%`;
+                    saveWeeklyExpenses(); 
                     break;
                 case 4:
+                    loadWeeklyExpenses();
                     thursdaySpent = thursdaySpent + minusCafe + minusEducation + minusFastfood + minusHealth + minusHouse + minusLeisur + minusOther + minusProducts + minusTaxi
                     console.log("Thursday spent:", thursdaySpent);
                     var maxValue = Math.max(mondaySpent + tuesdaySpent+wednesdaySpent+thursdaySpent+fridaySpent+saturdaySpent+sundaySpent);
@@ -256,8 +272,10 @@ sendAddBtnAdd.onclick = function(){
                     var absoluteMaxValue = maxValue  /  100;
                     console.log(maxValue)
                     document.getElementById("statisticColumnTh").style.height = `${thursdaySpent / absoluteMaxValue}%`;
+                    saveWeeklyExpenses(); 
                     break;
                 case 5:
+                    loadWeeklyExpenses();
                     fridaySpent = fridaySpent + minusCafe + minusEducation + minusFastfood + minusHealth + minusHouse + minusLeisur + minusOther + minusProducts + minusTaxi
                     console.log("Friday spent:", fridaySpent);
                     var maxValue = Math.max(mondaySpent + tuesdaySpent+wednesdaySpent+thursdaySpent+fridaySpent+saturdaySpent+sundaySpent);
@@ -265,8 +283,10 @@ sendAddBtnAdd.onclick = function(){
                     var absoluteMaxValue = maxValue  /  100;
                     console.log(maxValue)
                     document.getElementById("statisticColumnFr").style.height = `${fridaySpent / absoluteMaxValue}%`;
+                    saveWeeklyExpenses(); 
                     break;
                 case 6:
+                    loadWeeklyExpenses();
                     saturdaySpent = saturdaySpent + minusCafe + minusEducation + minusFastfood + minusHealth + minusHouse + minusLeisur + minusOther + minusProducts + minusTaxi
                     console.log("Saturday spent:", saturdaySpent);
                     var maxValue = Math.max(mondaySpent + tuesdaySpent+wednesdaySpent+thursdaySpent+fridaySpent+saturdaySpent+sundaySpent);
@@ -274,6 +294,7 @@ sendAddBtnAdd.onclick = function(){
                     var absoluteMaxValue = maxValue  /  100;
                     console.log(maxValue)
                     document.getElementById("statisticColumnSa").style.height = `${saturdaySpent / absoluteMaxValue}%`;
+                    saveWeeklyExpenses(); 
                     break;
             }
 
@@ -331,10 +352,16 @@ sendAddBtnAdd.onclick = function(){
                     break;
                 default:
                     break;
-            }
+            } 
         }
         else{
             balanceNum += parseInt(sendPriceAdd.value)
+            if (balanceNum<0){
+                balance.style.color = "red"
+            }
+            else{
+                balance.style.color = "white"
+            }
             balance.innerHTML = `${balanceNum} rub`
         }
         sendPriceAdd.placeholder = ""
@@ -350,8 +377,4 @@ sendAddBtnAdd.onclick = function(){
 
 saveWeeklyExpenses(); // Сохраняем расходы в куках
 loadWeeklyExpenses(); // Получаем расходы из куков
-
-
-
-
 

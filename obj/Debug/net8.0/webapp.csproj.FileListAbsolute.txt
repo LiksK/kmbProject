@@ -28,3 +28,4 @@ C:\Users\olego\Me\KMBproject\app\webapp\obj\Debug\net8.0\refint\webapp.dll
 C:\Users\olego\Me\KMBproject\app\webapp\obj\Debug\net8.0\webapp.pdb
 C:\Users\olego\Me\KMBproject\app\webapp\obj\Debug\net8.0\webapp.genruntimeconfig.cache
 C:\Users\olego\Me\KMBproject\app\webapp\obj\Debug\net8.0\ref\webapp.dll
+C:\Users\olego\Me\KMBproject\app\webapp\obj\Debug\net8.0\webapp.sourcelink.json
