@@ -87,7 +87,6 @@ let rendeerSendElement = (text, price, clas, type) => {
     <div id="readySendPrice">${price}</div>
     <div id="readySendClass">${clas}</div>
     <div id="readyTypeOfOperation">${type}</div>
-    <button id="delButton">Del</button>
 </div>`
 }
 let renderBiggestExpenses = (iconEmoji, nameClass, minusNumber) => {
